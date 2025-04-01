@@ -157,10 +157,10 @@ class userProfile extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Tap to add a bio'),
+                child: Text('Tap to add a bio',style: TextStyle(fontSize: 15),),
               ),
               SizedBox(
-                height: 300,
+                height: 400,
                 child: DefaultTabController(
                   length: 3,
                   child: Scaffold(
@@ -180,9 +180,38 @@ class userProfile extends StatelessWidget {
                       ),
                     ])),
                     body: TabBarView(children: [
-                      Center(child: Text('page1'),),
-                      Center(child: Text('page2'),),
-                      Center(child: Text('page3'),),
+                      GridView.builder(
+                        itemCount: 10,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                childAspectRatio: 5/7,
+                                  crossAxisCount: 3),
+                          itemBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.all(1.0),
+                            child: Container(
+                              
+                              color: Colors.grey,
+                            ),
+                            
+                          )),
+                      
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Only you can Wich vidoes',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                          Text('you liked',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                          Text('You can change this in Pravecy Settings',style: TextStyle(fontSize: 16,color: Colors.grey[700])),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Your private videos',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                          Text('To make your video visible only to ',style: TextStyle(fontSize: 16,color: Colors.grey[700])),
+                          Text(' yourself, set it to "Private" in the video\'s',style: TextStyle(fontSize: 16,color: Colors.grey[700])),
+                          Text('privacy settings.',style: TextStyle(fontSize: 16,color: Colors.grey[700])),
+                        ],
+                      ),
                     ]),
                   ),
                 ),
