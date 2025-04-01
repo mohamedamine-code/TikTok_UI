@@ -72,7 +72,7 @@ class Reels extends StatelessWidget {
                       // color: Colors.amber,
                       width: 300,
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('Join millions on TikTok, the world’s leading short video platform! 🎭',style: TextStyle(fontSize: 15,color: Colors.white)),
+                      child: Text('Join millions on TikTok,join us, the world’s leading short video platform! 🎭',style: TextStyle(fontSize: 15,color: Colors.white)),
                     ),
                   )
                 ],
